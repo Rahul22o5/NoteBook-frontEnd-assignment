@@ -5,10 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoteBook</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome Icons for visual flair -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1><i class="fa-solid fa-book-open"></i> NoteBook</h1>
+            <div class="header-controls">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-notes" placeholder="Search Notes...">
+                </div>
+                <div class="stats">
+                    <span class="stat-badge"><i class="fa-solid fa-book"></i> Total Notes: <strong
+                            id="total-notes">0</strong></span>
+                    <span class="stat-badge highlight"><i class="fa-solid fa-eye"></i> Showing: <strong
+                            id="showing-notes">0</strong></span>
+                </div>
+            </div>
+        </header>
 
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left Panel: Note Form -->
+            <section class="add-note-section">
+                <div class="form-card">
+                    <h2><i class="fa-solid fa-pen-nib"></i> Create Note</h2>
+                    <form id="note-form">
+                        <div class="form-group">
+                            <label for="note-title">Note Title</label>
+                            <input type="text" id="note-title" placeholder="Enter an inspiring title..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="note-desc">Note Description</label>
+                            <textarea id="note-desc" rows="8"
+                                placeholder="What's on your mind? Capture your thoughts here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" id="add-btn">
+                            <i class="fa-solid fa-plus"></i> Add To Book
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Right Panel: Notes Display -->
+            <section class="notes-display-section">
+                <div class="notes-header">
+                    <h2>Your Collection</h2>
+                </div>
+                <div class="notes-grid" id="notes-list">
+                    <!-- Notes dynamically injected here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
